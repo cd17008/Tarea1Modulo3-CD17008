@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36401.2 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "DWTarea1Modulo3", "DWTarea1Modulo3\DWTarea1Modulo3.dtproj", "{35A447A4-8718-0017-FBB2-169268E21981}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{35A447A4-8718-0017-FBB2-169268E21981}.Development|Default.ActiveCfg = Development
+		{35A447A4-8718-0017-FBB2-169268E21981}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5379F680-98DF-420D-A6F4-4C5A2E1023FE}
+	EndGlobalSection
+EndGlobal
