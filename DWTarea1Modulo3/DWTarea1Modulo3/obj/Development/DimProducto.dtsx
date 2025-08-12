@@ -11,8 +11,8 @@
   DTS:LocaleID="17418"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="9"
-  DTS:VersionGUID="{E88AC874-ABEF-4720-8151-E232AC9B6C6F}">
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{A4AD3B18-D9DA-45B3-8144-CC2C7DAA9715}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAetzZx80ieEmXcG1ZUWvf3gAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABeg0qSGiKaIBj9sOp2atJoQf4opontFRechHzLllLeJwAAAAAOgAAAAAIAACAAAABEKZz5Hxa6k2nfxuSkLHtQVL+mF7MPOyQki6tyDfJ23BAAAADNVZtC3HzBQi2EME7YRlcmQAAAAPSlbnoIJavzzJrWgsjBHbV/2fWtqsPf0aQOkfXCWazPAqgeifOJTrtNP2/NtiO9hzJy/EP/tQIN1pQAiRcPZo4</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAetzZx80ieEmXcG1ZUWvf3gAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABYstQNhwa/cvaAgSIhAJK9Kx90Qa/wDe6CyMt4OZ3ScAAAAAAOgAAAAAIAACAAAAAAlsZfGzEabPLeXHQnaKd3Xa7ubfBtdSwGlyTUIKYRQxAAAAC+haF7tvtf/RXgZRFPNYdPQAAAAJoZpC94ElvUAL081jyuPrjYyvdRAzRbssNDiEJVZaZlRClXhCfWIhzzrzqVla1TcGIZHX3z2+eHTVLVam24i5M</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -42,7 +42,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAetzZx80ieEmXcG1ZUWvf3gAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAAumLIjyetts0kqzZmfOooNCWHTe1hpufNaaMwxRzNWwAAAAAOgAAAAAIAACAAAAD1tqNkjlRD2/jd8I/yd3w4ZO8CCgOuN+8cDyZCaveBrhAAAABQT37944fvHETOVqmwX0HHQAAAAHVcIMM9dIPlsiSFMyl0PRvke35LfYuk8I1acD5gaItZRfir0XLBPfYMRhXaCnvf1JTpqf3vedGr4zhIEuRnCpk</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAetzZx80ieEmXcG1ZUWvf3gAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACufTsjnmnQ/aadBojNHcPhiKOKHd/cTA3BI/SrHbOoRgAAAAAOgAAAAAIAACAAAAC6WaaLU8o19N7pShkwswaE+gTJPnMv+6xyb+lJSaLe2xAAAADZ80fe9L794V1jBOtUPATbQAAAAKYdv0ef1SYFKC0FQFvT5pR86C11V3jyNc9XN/ocrvtoHMOdpjc60FVmRteiCBbr8P0vGvXx6Vx9U37ufuoK/aE</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -63,7 +63,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{C9C4701F-D676-464B-9B1F-4362E9AE8A91}"
-          SQLTask:SqlStatementSource="DELETE DimProducto;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="DELETE DimProducto;&#xA;DBCC CHECKIDENT('DimProducto',RESEED,0);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable

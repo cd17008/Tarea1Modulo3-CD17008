@@ -2,18 +2,23 @@
 <BuildLog xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <ProjectInfo>
     <Name>DWTarea1Modulo3</Name>
-    <LastWriteTime>2025-08-11T09:21:40.5446531Z</LastWriteTime>
+    <LastWriteTime>2025-08-12T01:57:10.737666Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>DimProducto.dtsx</Name>
-      <LastWriteTime>2025-08-11T08:39:39.4931101Z</LastWriteTime>
+      <LastWriteTime>2025-08-11T23:22:32.375135Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DimEstadoCliente.dtsx</Name>
-      <LastWriteTime>2025-08-11T09:22:41.5956095Z</LastWriteTime>
+      <LastWriteTime>2025-08-11T16:03:06.3119108Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>DimChunk.dtsx</Name>
+      <LastWriteTime>2025-08-12T01:57:09.2198327Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
