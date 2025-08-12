@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <ProjectInfo>
     <Name>DWTarea1Modulo3</Name>
-    <LastWriteTime>2025-08-12T01:57:10.737666Z</LastWriteTime>
+    <LastWriteTime>2025-08-12T05:19:18.2357616Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -13,12 +13,22 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DimEstadoCliente.dtsx</Name>
-      <LastWriteTime>2025-08-11T16:03:06.3119108Z</LastWriteTime>
+      <LastWriteTime>2025-08-12T04:36:45.2859484Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DimChunk.dtsx</Name>
-      <LastWriteTime>2025-08-12T01:57:09.2198327Z</LastWriteTime>
+      <LastWriteTime>2025-08-12T04:15:10.3623381Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Orquestador.dtsx</Name>
+      <LastWriteTime>2025-08-12T05:19:16.5219113Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>FactVentas.dtsx</Name>
+      <LastWriteTime>2025-08-12T05:15:26.9367965Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

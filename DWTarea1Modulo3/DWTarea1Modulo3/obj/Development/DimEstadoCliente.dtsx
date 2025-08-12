@@ -11,8 +11,8 @@
   DTS:LocaleID="17418"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="7"
-  DTS:VersionGUID="{86E61682-B0AB-45C7-8FB8-E89069A757CC}">
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{21B00236-6D21-4146-8222-03192084E108}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAetzZx80ieEmXcG1ZUWvf3gAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACvFzTNIGUZVaCCyTOat+ysNu3geMWHYfyPzNf7+q9/7QAAAAAOgAAAAAIAACAAAAD7aV7PkD36sVbd53fhOCY47Bli4W5FucvHSXBqSEP2uxAAAAABD0PxG20ZNoJYaUgnrQSeQAAAAEWHyfF6R0Z75i4wIJvT+1QRE7YN+WdIerI++Ip7zRIzDPGB76cJsgT5iw4MH7ZSF2zk3b19rgw3sqS6yhfOIWI</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAetzZx80ieEmXcG1ZUWvf3gAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACfr/SFkJtWjWcF9xcEGWnYRA3zWfd0sBWvjTk0P7OK8gAAAAAOgAAAAAIAACAAAACg9L5soYdfNTBKPEbdqG7lpgHnJBhoZViAH0cY03jQWBAAAACt26HxE+2oGjpkk/G+u/b9QAAAAIEAl6qjg9+Wp4L0RKmHU2h2FtIxWj+feG0pcnTy+EgWU7XZi+BqT7hR+6klQcXtdsOKsQ9HPs3dne4PefKEEpE</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -42,7 +42,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAetzZx80ieEmXcG1ZUWvf3gAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAlTgFSwGh+2LOZXYEBsdSW4ZqAS7zbEh2xYwaFl9fSVQAAAAAOgAAAAAIAACAAAADEvrD8virt01PbtSVaEY7km6PLqrv7hVlb9wVdiJuq1RAAAACM6T191gZAUfFvkcC7DIq3QAAAAHcPu/1ds4g92PjeWQZxIrYzLdF9OAh0iv0qN6uIVaRhHaDltUzDzVSAzQzYtQxLRGHHF8JUqgwVkZqXU42Zdls</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAetzZx80ieEmXcG1ZUWvf3gAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAMX2Yzjs8FGO2zjz2i4/kEwskZByYvY4slKDvZxJN+7gAAAAAOgAAAAAIAACAAAAAE0yuGq1LmNqLSfDecgNpndEpaKVGA08mOTeo5VKHYAxAAAAAzQOZuZn8Mjgk3s9QrtrnWQAAAAG7G33AssmiIIxVOap16RjZ3cSahqo7E+1QsSBHGc066/soOjHgkrm3UffubM/Gz7b2X37URXOq6hTgwhXqPl3M</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -115,7 +115,8 @@ WHEN 'Pacific Northwest' THEN 'Pacifico Noroeste'
 WHEN 'Southern' THEN 'Sur'
 WHEN 'Southwest' THEN 'Suroeste'
 ELSE r.RegionName END
-AS NombreRegion
+AS NombreRegion,
+s.StateID as IdEstado
 FROM State s 
 INNER JOIN Region r ON s.RegionID = r.RegionID;</property>
                 <property
@@ -203,6 +204,15 @@ INNER JOIN Region r ON s.RegionID = r.RegionID;</property>
                       lineageId="Package\Llenar DimEstadoCliente\Leer Estado-Region.Outputs[Salida de origen de ADO NET].Columns[NombreRegion]"
                       name="NombreRegion"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Llenar DimEstadoCliente\Leer Estado-Region.Outputs[Salida de origen de ADO NET].Columns[IdEstado]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Llenar DimEstadoCliente\Leer Estado-Region.Outputs[Salida de origen de ADO NET].ExternalColumns[IdEstado]"
+                      lineageId="Package\Llenar DimEstadoCliente\Leer Estado-Region.Outputs[Salida de origen de ADO NET].Columns[IdEstado]"
+                      name="IdEstado"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -230,6 +240,10 @@ INNER JOIN Region r ON s.RegionID = r.RegionID;</property>
                       dataType="wstr"
                       length="50"
                       name="NombreRegion" />
+                    <externalMetadataColumn
+                      refId="Package\Llenar DimEstadoCliente\Leer Estado-Region.Outputs[Salida de origen de ADO NET].ExternalColumns[IdEstado]"
+                      dataType="i4"
+                      name="IdEstado" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -267,6 +281,11 @@ INNER JOIN Region r ON s.RegionID = r.RegionID;</property>
                       lineageId="Package\Llenar DimEstadoCliente\Leer Estado-Region.Outputs[Salida de error de origen de ADO NET].Columns[NombreRegion]"
                       name="NombreRegion" />
                     <outputColumn
+                      refId="Package\Llenar DimEstadoCliente\Leer Estado-Region.Outputs[Salida de error de origen de ADO NET].Columns[IdEstado]"
+                      dataType="i4"
+                      lineageId="Package\Llenar DimEstadoCliente\Leer Estado-Region.Outputs[Salida de error de origen de ADO NET].Columns[IdEstado]"
+                      name="IdEstado" />
+                    <outputColumn
                       refId="Package\Llenar DimEstadoCliente\Leer Estado-Region.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
                       dataType="i4"
                       lineageId="Package\Llenar DimEstadoCliente\Leer Estado-Region.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
@@ -284,11 +303,11 @@ INNER JOIN Region r ON s.RegionID = r.RegionID;</property>
               </outputs>
             </component>
             <component
-              refId="Package\Llenar DimEstadoCliente\Llenar DimEstadoCliente"
+              refId="Package\Llenar DimEstadoCliente\Llenar EstadoCliente"
               componentClassID="Microsoft.ManagedComponentHost"
               contactInfo="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
               description="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC."
-              name="Llenar DimEstadoCliente"
+              name="Llenar EstadoCliente"
               usesDispositions="true"
               version="2">
               <properties>
@@ -319,7 +338,7 @@ INNER JOIN Region r ON s.RegionID = r.RegionID;</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Llenar DimEstadoCliente\Llenar DimEstadoCliente.Connections[IDbConnection]"
+                  refId="Package\Llenar DimEstadoCliente\Llenar EstadoCliente.Connections[IDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[localhost.tareamodulo3.cd17008]"
                   connectionManagerRefId="Package.ConnectionManagers[localhost.tareamodulo3.cd17008]"
                   description="Administrador de conexiones administrado"
@@ -327,97 +346,107 @@ INNER JOIN Region r ON s.RegionID = r.RegionID;</property>
               </connections>
               <inputs>
                 <input
-                  refId="Package\Llenar DimEstadoCliente\Llenar DimEstadoCliente.Inputs[Entrada de destino de ADO NET]"
+                  refId="Package\Llenar DimEstadoCliente\Llenar EstadoCliente.Inputs[Entrada de destino de ADO NET]"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="Entrada de destino de ADO NET">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Llenar DimEstadoCliente\Llenar DimEstadoCliente.Inputs[Entrada de destino de ADO NET].Columns[CodigoEstado]"
+                      refId="Package\Llenar DimEstadoCliente\Llenar EstadoCliente.Inputs[Entrada de destino de ADO NET].Columns[CodigoEstado]"
                       cachedDataType="wstr"
                       cachedLength="2"
                       cachedName="CodigoEstado"
-                      externalMetadataColumnId="Package\Llenar DimEstadoCliente\Llenar DimEstadoCliente.Inputs[Entrada de destino de ADO NET].ExternalColumns[CodigoEstado]"
+                      externalMetadataColumnId="Package\Llenar DimEstadoCliente\Llenar EstadoCliente.Inputs[Entrada de destino de ADO NET].ExternalColumns[CodigoEstado]"
                       lineageId="Package\Llenar DimEstadoCliente\Leer Estado-Region.Outputs[Salida de origen de ADO NET].Columns[CodigoEstado]" />
                     <inputColumn
-                      refId="Package\Llenar DimEstadoCliente\Llenar DimEstadoCliente.Inputs[Entrada de destino de ADO NET].Columns[NombreEstado]"
+                      refId="Package\Llenar DimEstadoCliente\Llenar EstadoCliente.Inputs[Entrada de destino de ADO NET].Columns[NombreEstado]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="NombreEstado"
-                      externalMetadataColumnId="Package\Llenar DimEstadoCliente\Llenar DimEstadoCliente.Inputs[Entrada de destino de ADO NET].ExternalColumns[NombreEstado]"
+                      externalMetadataColumnId="Package\Llenar DimEstadoCliente\Llenar EstadoCliente.Inputs[Entrada de destino de ADO NET].ExternalColumns[NombreEstado]"
                       lineageId="Package\Llenar DimEstadoCliente\Leer Estado-Region.Outputs[Salida de origen de ADO NET].Columns[NombreEstado]" />
                     <inputColumn
-                      refId="Package\Llenar DimEstadoCliente\Llenar DimEstadoCliente.Inputs[Entrada de destino de ADO NET].Columns[ZonaHoraria]"
+                      refId="Package\Llenar DimEstadoCliente\Llenar EstadoCliente.Inputs[Entrada de destino de ADO NET].Columns[ZonaHoraria]"
                       cachedDataType="wstr"
                       cachedLength="13"
                       cachedName="ZonaHoraria"
-                      externalMetadataColumnId="Package\Llenar DimEstadoCliente\Llenar DimEstadoCliente.Inputs[Entrada de destino de ADO NET].ExternalColumns[ZonaHoraria]"
+                      externalMetadataColumnId="Package\Llenar DimEstadoCliente\Llenar EstadoCliente.Inputs[Entrada de destino de ADO NET].ExternalColumns[ZonaHoraria]"
                       lineageId="Package\Llenar DimEstadoCliente\Leer Estado-Region.Outputs[Salida de origen de ADO NET].Columns[ZonaHoraria]" />
                     <inputColumn
-                      refId="Package\Llenar DimEstadoCliente\Llenar DimEstadoCliente.Inputs[Entrada de destino de ADO NET].Columns[IdRegion]"
+                      refId="Package\Llenar DimEstadoCliente\Llenar EstadoCliente.Inputs[Entrada de destino de ADO NET].Columns[IdRegion]"
                       cachedDataType="i4"
                       cachedName="IdRegion"
-                      externalMetadataColumnId="Package\Llenar DimEstadoCliente\Llenar DimEstadoCliente.Inputs[Entrada de destino de ADO NET].ExternalColumns[IdRegion]"
+                      externalMetadataColumnId="Package\Llenar DimEstadoCliente\Llenar EstadoCliente.Inputs[Entrada de destino de ADO NET].ExternalColumns[IdRegion]"
                       lineageId="Package\Llenar DimEstadoCliente\Leer Estado-Region.Outputs[Salida de origen de ADO NET].Columns[IdRegion]" />
                     <inputColumn
-                      refId="Package\Llenar DimEstadoCliente\Llenar DimEstadoCliente.Inputs[Entrada de destino de ADO NET].Columns[NombreRegion]"
+                      refId="Package\Llenar DimEstadoCliente\Llenar EstadoCliente.Inputs[Entrada de destino de ADO NET].Columns[NombreRegion]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="NombreRegion"
-                      externalMetadataColumnId="Package\Llenar DimEstadoCliente\Llenar DimEstadoCliente.Inputs[Entrada de destino de ADO NET].ExternalColumns[NombreRegion]"
+                      externalMetadataColumnId="Package\Llenar DimEstadoCliente\Llenar EstadoCliente.Inputs[Entrada de destino de ADO NET].ExternalColumns[NombreRegion]"
                       lineageId="Package\Llenar DimEstadoCliente\Leer Estado-Region.Outputs[Salida de origen de ADO NET].Columns[NombreRegion]" />
+                    <inputColumn
+                      refId="Package\Llenar DimEstadoCliente\Llenar EstadoCliente.Inputs[Entrada de destino de ADO NET].Columns[IdEstado]"
+                      cachedDataType="i4"
+                      cachedName="IdEstado"
+                      externalMetadataColumnId="Package\Llenar DimEstadoCliente\Llenar EstadoCliente.Inputs[Entrada de destino de ADO NET].ExternalColumns[IdEstado]"
+                      lineageId="Package\Llenar DimEstadoCliente\Leer Estado-Region.Outputs[Salida de origen de ADO NET].Columns[IdEstado]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Llenar DimEstadoCliente\Llenar DimEstadoCliente.Inputs[Entrada de destino de ADO NET].ExternalColumns[EstadoClienteKey]"
+                      refId="Package\Llenar DimEstadoCliente\Llenar EstadoCliente.Inputs[Entrada de destino de ADO NET].ExternalColumns[EstadoClienteKey]"
                       dataType="i4"
                       name="EstadoClienteKey" />
                     <externalMetadataColumn
-                      refId="Package\Llenar DimEstadoCliente\Llenar DimEstadoCliente.Inputs[Entrada de destino de ADO NET].ExternalColumns[CodigoEstado]"
+                      refId="Package\Llenar DimEstadoCliente\Llenar EstadoCliente.Inputs[Entrada de destino de ADO NET].ExternalColumns[CodigoEstado]"
                       dataType="wstr"
                       length="2"
                       name="CodigoEstado" />
                     <externalMetadataColumn
-                      refId="Package\Llenar DimEstadoCliente\Llenar DimEstadoCliente.Inputs[Entrada de destino de ADO NET].ExternalColumns[NombreEstado]"
+                      refId="Package\Llenar DimEstadoCliente\Llenar EstadoCliente.Inputs[Entrada de destino de ADO NET].ExternalColumns[NombreEstado]"
                       dataType="wstr"
                       length="50"
                       name="NombreEstado" />
                     <externalMetadataColumn
-                      refId="Package\Llenar DimEstadoCliente\Llenar DimEstadoCliente.Inputs[Entrada de destino de ADO NET].ExternalColumns[ZonaHoraria]"
+                      refId="Package\Llenar DimEstadoCliente\Llenar EstadoCliente.Inputs[Entrada de destino de ADO NET].ExternalColumns[ZonaHoraria]"
                       dataType="wstr"
-                      length="25"
+                      length="20"
                       name="ZonaHoraria" />
                     <externalMetadataColumn
-                      refId="Package\Llenar DimEstadoCliente\Llenar DimEstadoCliente.Inputs[Entrada de destino de ADO NET].ExternalColumns[IdRegion]"
+                      refId="Package\Llenar DimEstadoCliente\Llenar EstadoCliente.Inputs[Entrada de destino de ADO NET].ExternalColumns[IdRegion]"
                       dataType="i4"
                       name="IdRegion" />
                     <externalMetadataColumn
-                      refId="Package\Llenar DimEstadoCliente\Llenar DimEstadoCliente.Inputs[Entrada de destino de ADO NET].ExternalColumns[NombreRegion]"
+                      refId="Package\Llenar DimEstadoCliente\Llenar EstadoCliente.Inputs[Entrada de destino de ADO NET].ExternalColumns[NombreRegion]"
                       dataType="wstr"
                       length="50"
                       name="NombreRegion" />
+                    <externalMetadataColumn
+                      refId="Package\Llenar DimEstadoCliente\Llenar EstadoCliente.Inputs[Entrada de destino de ADO NET].ExternalColumns[IdEstado]"
+                      dataType="i4"
+                      name="IdEstado" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Llenar DimEstadoCliente\Llenar DimEstadoCliente.Outputs[Salida de error de destino de ADO NET]"
+                  refId="Package\Llenar DimEstadoCliente\Llenar EstadoCliente.Outputs[Salida de error de destino de ADO NET]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Salida de error de destino de ADO NET"
-                  synchronousInputId="Package\Llenar DimEstadoCliente\Llenar DimEstadoCliente.Inputs[Entrada de destino de ADO NET]">
+                  synchronousInputId="Package\Llenar DimEstadoCliente\Llenar EstadoCliente.Inputs[Entrada de destino de ADO NET]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Llenar DimEstadoCliente\Llenar DimEstadoCliente.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      refId="Package\Llenar DimEstadoCliente\Llenar EstadoCliente.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Llenar DimEstadoCliente\Llenar DimEstadoCliente.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      lineageId="Package\Llenar DimEstadoCliente\Llenar EstadoCliente.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Llenar DimEstadoCliente\Llenar DimEstadoCliente.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      refId="Package\Llenar DimEstadoCliente\Llenar EstadoCliente.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Llenar DimEstadoCliente\Llenar DimEstadoCliente.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      lineageId="Package\Llenar DimEstadoCliente\Llenar EstadoCliente.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -429,7 +458,7 @@ INNER JOIN Region r ON s.RegionID = r.RegionID;</property>
           <paths>
             <path
               refId="Package\Llenar DimEstadoCliente.Paths[Salida de origen de ADO NET]"
-              endId="Package\Llenar DimEstadoCliente\Llenar DimEstadoCliente.Inputs[Entrada de destino de ADO NET]"
+              endId="Package\Llenar DimEstadoCliente\Llenar EstadoCliente.Inputs[Entrada de destino de ADO NET]"
               name="Salida de origen de ADO NET"
               startId="Package\Llenar DimEstadoCliente\Leer Estado-Region.Outputs[Salida de origen de ADO NET]" />
           </paths>
@@ -514,35 +543,35 @@ INNER JOIN Region r ON s.RegionID = r.RegionID;</property>
           Id="Package\Llenar DimEstadoCliente\Leer Estado-Region"
           TopLeft="100,94" />
         <NodeLayout
-          Size="201,42"
-          Id="Package\Llenar DimEstadoCliente\Llenar DimEstadoCliente"
-          TopLeft="446,416" />
+          Size="181,42"
+          Id="Package\Llenar DimEstadoCliente\Llenar EstadoCliente"
+          TopLeft="449,328" />
         <EdgeLayout
           Id="Package\Llenar DimEstadoCliente.Paths[Salida de origen de ADO NET]"
           TopLeft="188.5,136">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="358,280"
+              EndConnector="351,192"
               Start="0,0"
-              End="358,272.5">
+              End="351,184.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,136" />
+                    End="0,92" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,136"
-                    Point2="0,140"
-                    Point3="4,140" />
+                    Point1="0,92"
+                    Point2="0,96"
+                    Point3="4,96" />
                   <mssgle:LineSegment
-                    End="354,140" />
+                    End="347,96" />
                   <mssgle:CubicBezierSegment
-                    Point1="354,140"
-                    Point2="358,140"
-                    Point3="358,144" />
+                    Point1="347,96"
+                    Point2="351,96"
+                    Point3="351,100" />
                   <mssgle:LineSegment
-                    End="358,272.5" />
+                    End="351,184.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -563,7 +592,7 @@ INNER JOIN Region r ON s.RegionID = r.RegionID;</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Llenar DimEstadoCliente\Llenar DimEstadoCliente">
+    design-time-name="Package\Llenar DimEstadoCliente\Llenar EstadoCliente">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

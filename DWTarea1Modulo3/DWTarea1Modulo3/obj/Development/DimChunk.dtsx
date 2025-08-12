@@ -11,8 +11,8 @@
   DTS:LocaleID="17418"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{DCBDDD8E-1AE9-43E2-AC8E-D5288DC63388}">
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{1C0DA31C-A201-4F1D-8DFE-096BF9FDD561}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAetzZx80ieEmXcG1ZUWvf3gAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACud9vfvOEVvKLJM/r/hycy+2gehRm2yC7Kbzk6VcO6VwAAAAAOgAAAAAIAACAAAADFUKdM6Qm1PChjkOh5lEfECyLVYMRoFR7gWd0ss+q1OBAAAAA7gSYO1SwET8hTvxvlaQmAQAAAAE0acfhscTvArMiyccY8avPHbKgp212xiL9FLA0H99PbYQ5Fx5MSPk4Ll3+UqSyLprO4T04TTQ/nIqdyGbOAsIc</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAetzZx80ieEmXcG1ZUWvf3gAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADGtKTVlVa4ewxcpghT0Vzp+V01ZwI8/v1Q1+fSzMNM8QAAAAAOgAAAAAIAACAAAACA4JQcKfjxzqDzvC8C+4ds/bOHXNJqH+2SlQVA8Bc9rBAAAABO56R81V2eUOYfDH4wZ4EcQAAAAHuX3gKH0ZFXKwJMndcmu+fqsuK93pblCSpjZ57A+BKRVu9cMGTuVIFxN+20obbpIsVw9MLAYIBtPGVkwLsRZXU</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -42,7 +42,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAetzZx80ieEmXcG1ZUWvf3gAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABGiTD+r/IwYUQXEquJIZFGi0KSYbIbZI7ftT3iJBDlEQAAAAAOgAAAAAIAACAAAABSNELuzFovjBTxLU7XResShMi7iPszQZSwZ7qL9ZM+uhAAAABDq2X/6kijatHunp4q2BTBQAAAALYhlCGPZeP2+ZtUjNeySmQgHchbJ4XuY6zNQ1Ntq4+P2q8MY/gvdGaly99yuS3tixgsxZOaG7gUpJ+k/5WWcGI</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAetzZx80ieEmXcG1ZUWvf3gAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABo1feuEO0mnD3B0k5aGY91WPb7n8ke6WAwVAL1ECLxHwAAAAAOgAAAAAIAACAAAADcjT6frDUD5JPlq2LNy5Q6lvMOz6eLTkYaL5Pk68AhFBAAAABy8IkC6toAOPStjWsm2d9tQAAAAOy2ICRg9BLAwg9D010rt+yOLNnnnxMCSpqYYKj0WGpQdgrhb0/G+ZUaB/kyJegj/ed5T3KtKc+pEhpaJu/ldnA</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -63,7 +63,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{90443638-0549-49CF-B9E8-32936DED2CA5}"
-          SQLTask:SqlStatementSource="DELETE DimChunk;&#xA;DBCC CHECKIDENT('DimChunk',RESEED,0);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="DELETE DimBasura;&#xA;DBCC CHECKIDENT('DimBasura',RESEED,0);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -193,7 +193,7 @@
                   description="Nombre de la tabla de la base de datos de destino."
                   expressionType="Notify"
                   name="TableOrViewName"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."DimChunk"</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."DimBasura"</property>
                 <property
                   dataType="System.Int32"
                   description="Especifique el número de filas por lote. El valor predeterminado es 0, que utiliza el mismo tamaño que el búfer interno de SSIS. "
