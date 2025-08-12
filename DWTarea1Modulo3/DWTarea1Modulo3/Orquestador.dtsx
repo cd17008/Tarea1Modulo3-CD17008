@@ -11,8 +11,8 @@
   DTS:LocaleID="17418"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{6CA6BB50-B870-4D9B-8D1A-8E2AAFAEB45A}">
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{735C4CC7-BBE6-41EE-BD23-E07B2C81754E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAetzZx80ieEmXcG1ZUWvf3gAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADCPUQ85AwKZoQC6izuan7NOvH/zsg7xWSFeo1fXkxjiQAAAAAOgAAAAAIAACAAAAAwv6JKkAdU8F0efqpQHbqb1WusUDNsYhulV6l6D0diBhAAAADSxZs6hBReJo33T/1dDcKgQAAAAEacxOYsiRmi91x5NN0wit2MOAq4SoMH4X/KkclD1nNc7+Yjyb5OqT+oH74EvV7HT7v11tBHAZhnBbUtMDfAvXg</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAetzZx80ieEmXcG1ZUWvf3gAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA1hun2bGtoSfKLdKwQWOznENbFg2LhVNRnGdmt4LxSIAAAAAAOgAAAAAIAACAAAACjYeZ+PUkeI36soTMZYtCuWspqbdwXn0qenK1Kc17v/BAAAAD6oLV1J2RBL6nNsUYLh8IXQAAAAENxUMLHulVfaW0zTmPfKKvijzvItzTWfhhMtbHlvccBUBpJmTiXGsxMLJpkZt4aWSc9GRpMT56WzZW9QC1hllc</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -105,13 +105,13 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Execute Package Task"
+      DTS:refId="Package\FactVentas"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
       DTS:DTSID="{4F305A2C-6521-4A46-AAB1-304E2A7B3243}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Execute Package Task"
+      DTS:ObjectName="FactVentas"
       DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -154,7 +154,7 @@
       DTS:From="Package\DimProducto"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restricción 3"
-      DTS:To="Package\Execute Package Task" />
+      DTS:To="Package\FactVentas" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
@@ -287,8 +287,8 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="191,42"
-          Id="Package\Execute Package Task"
+          Size="135,42"
+          Id="Package\FactVentas"
           TopLeft="720,448" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 3]"
@@ -296,9 +296,9 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="168,36"
+              EndConnector="140,36"
               Start="0,0"
-              End="168,28.5">
+              End="140,28.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -309,13 +309,13 @@
                     Point2="0,18"
                     Point3="4,18" />
                   <mssgle:LineSegment
-                    End="164,18" />
+                    End="136,18" />
                   <mssgle:CubicBezierSegment
-                    Point1="164,18"
-                    Point2="168,18"
-                    Point3="168,22" />
+                    Point1="136,18"
+                    Point2="140,18"
+                    Point3="140,22" />
                   <mssgle:LineSegment
-                    End="168,28.5" />
+                    End="140,28.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
